@@ -2,6 +2,17 @@
 A study tracking application that turns learning progress into a growing garden.
 This is my first software project.
 
+Current Features:
+- Track study time
+- Record study sessions
+- Display session history
+
+Planned Features:
+- Local storage
+- Garden growth system
+- Statistics dashboard
+- AI study assistant
+
 Development Progress
 
 Day 1 - 16.06.2026
