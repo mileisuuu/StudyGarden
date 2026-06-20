@@ -27,4 +27,9 @@ addTimeButton.addEventListener("click", function () {
 
     todayTimeElement.textContent = todayTime;
     totalTimeElement.textContent = totalTime;
+
+let sessions = [];
+sessions.push(addCourse.value + " : " + hoursInput.value + " h");
+console.log(sessions);
+localStorage.setItem("sessions", JSON.stringify(sessions));
 });
