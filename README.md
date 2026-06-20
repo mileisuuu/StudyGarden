@@ -26,3 +26,6 @@ Day 2 - 17.06.2026
 
 Day 3 - 18.06.2026
 - Added session history list
+
+Day 4 - 20.06.2026
+- Add session storage with localStorage
