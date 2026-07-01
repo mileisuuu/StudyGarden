@@ -30,7 +30,7 @@ Day 3 - 18.06.2026
 Day 4 - 20.06.2026
 - Add session storage with localStorage
 
-Day 4 - 01.07.2026
-Added persistent storage using localStorage.
-Study sessions are now saved automatically.
-Session history is restored after refreshing the page.
+Day 5 - 01.07.2026
+- Added persistent storage using localStorage.
+- Study sessions are now saved automatically.
+- Session history is restored after refreshing the page.
