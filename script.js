@@ -1,5 +1,6 @@
 let todayTime = 0;
 let totalTime = 0;
+let sessions = [];
 
 const todayTimeElement = document.getElementById("today-time");
 const totalTimeElement = document.getElementById("total-time");
@@ -10,26 +11,36 @@ const addSessionButton = document.getElementById("add-session-button");
 const latestSession = document.getElementById("latest-session");
 const sessionList = document.getElementById("session-list");
 
+const savedData = localStorage.getItem("sessions");
+
+if (savedData !== null) {
+    sessions = JSON.parse(savedData);
+}
+
+sessions.forEach(function (session) {
+    const newSession = document.createElement("li");
+    newSession.textContent = session;
+    sessionList.appendChild(newSession);
+});
 
 addSessionButton.addEventListener("click", function () {
-    latestSession.textContent = addCourse.value + " : " + hoursInput.value + " h";
+    const sessionText = addCourse.value + " : " + hoursInput.value + " h";
 
-    const newSession = document.createElement("li")
-newSession.textContent = addCourse.value + " : " + hoursInput.value + " h";
-sessionList.appendChild(newSession);
+    latestSession.textContent = sessionText;
+
+    sessions.push(sessionText);
+
+    localStorage.setItem("sessions", JSON.stringify(sessions));
+
+    const newSession = document.createElement("li");
+    newSession.textContent = sessionText;
+    sessionList.appendChild(newSession);
 });
 
 addTimeButton.addEventListener("click", function () {
     todayTime = todayTime + 0.5;
     totalTime = totalTime + 0.5;
 
-    console.log(addCourse.value)
-
     todayTimeElement.textContent = todayTime;
     totalTimeElement.textContent = totalTime;
-
-let sessions = [];
-sessions.push(addCourse.value + " : " + hoursInput.value + " h");
-console.log(sessions);
-localStorage.setItem("sessions", JSON.stringify(sessions));
 });
